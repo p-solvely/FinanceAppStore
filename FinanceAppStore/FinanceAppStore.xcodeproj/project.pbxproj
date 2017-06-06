@@ -11,7 +11,10 @@
 		FF6B6E091EE654CC00F247A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E071EE654CC00F247A5 /* Main.storyboard */; };
 		FF6B6E0B1EE654CC00F247A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */; };
 		FF6B6E0E1EE654CC00F247A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */; };
-		FF6B6E161EE6566100F247A5 /* RankingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */; };
+		FF6B6E181EE65A3C00F247A5 /* RankingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */; };
+		FF6B6E2C1EE6F23F00F247A5 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E2B1EE6F23F00F247A5 /* JSONParser.swift */; };
+		FF6B6E2F1EE6F32F00F247A5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E2E1EE6F32F00F247A5 /* AppInfo.swift */; };
+		FF6B6E311EE6F57100F247A5 /* AppIntoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +24,10 @@
 		FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF6B6E0D1EE654CC00F247A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF6B6E0F1EE654CC00F247A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingListViewController.swift; sourceTree = "<group>"; };
+		FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingListViewController.swift; sourceTree = "<group>"; };
+		FF6B6E2B1EE6F23F00F247A5 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = json/JSONParser.swift; sourceTree = "<group>"; };
+		FF6B6E2E1EE6F32F00F247A5 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfo.swift; path = data/AppInfo.swift; sourceTree = "<group>"; };
+		FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIntoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,33 @@
 		FF6B6E021EE654CC00F247A5 /* FinanceAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				FF6B6E2D1EE6F31000F247A5 /* data */,
+				FF6B6E2A1EE6F22700F247A5 /* json */,
 				FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */,
 				FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */,
 				FF6B6E0F1EE654CC00F247A5 /* Info.plist */,
 				FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */,
 				FF6B6E071EE654CC00F247A5 /* Main.storyboard */,
-				FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */,
+				FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */,
+				FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */,
 			);
 			path = FinanceAppStore;
+			sourceTree = "<group>";
+		};
+		FF6B6E2A1EE6F22700F247A5 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				FF6B6E2B1EE6F23F00F247A5 /* JSONParser.swift */,
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
+		FF6B6E2D1EE6F31000F247A5 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FF6B6E2E1EE6F32F00F247A5 /* AppInfo.swift */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6B6E041EE654CC00F247A5 /* AppDelegate.swift in Sources */,
-				FF6B6E161EE6566100F247A5 /* RankingListViewController.swift in Sources */,
+				FF6B6E2F1EE6F32F00F247A5 /* AppInfo.swift in Sources */,
+				FF6B6E181EE65A3C00F247A5 /* RankingListViewController.swift in Sources */,
+				FF6B6E311EE6F57100F247A5 /* AppIntoCell.swift in Sources */,
+				FF6B6E2C1EE6F23F00F247A5 /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -246,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -297,6 +325,7 @@
 				FF6B6E141EE654CC00F247A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
