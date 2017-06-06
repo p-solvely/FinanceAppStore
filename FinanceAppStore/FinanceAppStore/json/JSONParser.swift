@@ -67,4 +67,18 @@ class JSONParser {
         
         return appRankingList;
     }
+    
+    class func parserAppDesc(_ json:JSONObject) -> (url:String?, title:String?, atristName:String?, description:String?) {
+        
+        let results = json["results"] as? NSArray
+        let result = results?.firstObject as? JSONObject
+        
+        let strUrl = result?["artworkUrl512"] as? String
+        let title = result?["trackName"] as? String
+        let name = result?["artistName"] as? String
+        let desc = result?["description"] as? String
+        
+        return (strUrl, title, name, desc)
+    }
+
 }

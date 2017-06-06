@@ -98,14 +98,24 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "DetailSegue" {
+            if let destination = segue.destination as? DetailViewController {
+                
+                guard let selectedIndex = self.tableView.indexPathForSelectedRow?.row else {
+                    return
+                }
+                
+                guard let appInfo = appRankingList?.object(at: selectedIndex) as? AppInfo else {
+                    return
+                }
+                
+                destination.selectedAppId = appInfo.appId
+            }
+        }
     }
-    */
 
 }
