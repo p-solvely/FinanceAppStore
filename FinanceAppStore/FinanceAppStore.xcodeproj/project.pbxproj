@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		FF6B6E041EE654CC00F247A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */; };
-		FF6B6E061EE654CC00F247A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E051EE654CC00F247A5 /* ViewController.swift */; };
 		FF6B6E091EE654CC00F247A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E071EE654CC00F247A5 /* Main.storyboard */; };
 		FF6B6E0B1EE654CC00F247A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */; };
 		FF6B6E0E1EE654CC00F247A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */; };
+		FF6B6E161EE6566100F247A5 /* RankingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF6B6E001EE654CC00F247A5 /* FinanceAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF6B6E051EE654CC00F247A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF6B6E081EE654CC00F247A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF6B6E0D1EE654CC00F247A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF6B6E0F1EE654CC00F247A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */,
-				FF6B6E051EE654CC00F247A5 /* ViewController.swift */,
-				FF6B6E071EE654CC00F247A5 /* Main.storyboard */,
 				FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */,
-				FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */,
 				FF6B6E0F1EE654CC00F247A5 /* Info.plist */,
+				FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */,
+				FF6B6E071EE654CC00F247A5 /* Main.storyboard */,
+				FF6B6E151EE6566100F247A5 /* RankingListViewController.swift */,
 			);
 			path = FinanceAppStore;
 			sourceTree = "<group>";
@@ -136,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF6B6E061EE654CC00F247A5 /* ViewController.swift in Sources */,
 				FF6B6E041EE654CC00F247A5 /* AppDelegate.swift in Sources */,
+				FF6B6E161EE6566100F247A5 /* RankingListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
