@@ -71,7 +71,7 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "appInfoCell", for: indexPath) as! AppIntoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "appInfoCell", for: indexPath) as! AppInfoCell
         
         cell.rankingLabel.text = String(indexPath.row+1)
         

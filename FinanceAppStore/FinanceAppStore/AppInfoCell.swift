@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppIntoCell: UITableViewCell {
+class AppInfoCell: UITableViewCell {
     
     @IBOutlet var rankingLabel: UILabel!
     @IBOutlet var icon: UIImageView!

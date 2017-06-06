@@ -14,7 +14,7 @@
 		FF6B6E181EE65A3C00F247A5 /* RankingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */; };
 		FF6B6E2C1EE6F23F00F247A5 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E2B1EE6F23F00F247A5 /* JSONParser.swift */; };
 		FF6B6E2F1EE6F32F00F247A5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E2E1EE6F32F00F247A5 /* AppInfo.swift */; };
-		FF6B6E311EE6F57100F247A5 /* AppIntoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */; };
+		FF6B6E311EE6F57100F247A5 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E301EE6F57100F247A5 /* AppInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingListViewController.swift; sourceTree = "<group>"; };
 		FF6B6E2B1EE6F23F00F247A5 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = json/JSONParser.swift; sourceTree = "<group>"; };
 		FF6B6E2E1EE6F32F00F247A5 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfo.swift; path = data/AppInfo.swift; sourceTree = "<group>"; };
-		FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIntoCell.swift; sourceTree = "<group>"; };
+		FF6B6E301EE6F57100F247A5 /* AppInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				FF6B6E0C1EE654CC00F247A5 /* LaunchScreen.storyboard */,
 				FF6B6E071EE654CC00F247A5 /* Main.storyboard */,
 				FF6B6E171EE65A3C00F247A5 /* RankingListViewController.swift */,
-				FF6B6E301EE6F57100F247A5 /* AppIntoCell.swift */,
+				FF6B6E301EE6F57100F247A5 /* AppInfoCell.swift */,
 			);
 			path = FinanceAppStore;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 				FF6B6E041EE654CC00F247A5 /* AppDelegate.swift in Sources */,
 				FF6B6E2F1EE6F32F00F247A5 /* AppInfo.swift in Sources */,
 				FF6B6E181EE65A3C00F247A5 /* RankingListViewController.swift in Sources */,
-				FF6B6E311EE6F57100F247A5 /* AppIntoCell.swift in Sources */,
+				FF6B6E311EE6F57100F247A5 /* AppInfoCell.swift in Sources */,
 				FF6B6E2C1EE6F23F00F247A5 /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
