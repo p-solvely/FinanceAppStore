@@ -92,12 +92,6 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
             
             DispatchQueue.main.async {
                 cell.icon.image = UIImage(data: data!)
-                cell.icon.clipsToBounds = true
-                cell.icon.layer.cornerRadius = 20
-                cell.icon.layer.borderColor = UIColor.lightGray.cgColor
-                cell.icon.layer.borderWidth = 1
-                
-
             }
         }
         
