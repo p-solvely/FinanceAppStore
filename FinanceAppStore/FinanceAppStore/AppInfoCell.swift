@@ -17,6 +17,8 @@ class AppInfoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        
         icon.clipsToBounds = true
         icon.layer.cornerRadius = 20
         icon.layer.borderColor = UIColor.lightGray.cgColor
