@@ -21,22 +21,14 @@ class DetailViewController: UIViewController {
     var selectedAppId:String?
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         guard let appId = selectedAppId else {
             
             self.indicatorView.stopAnimating()
             
-            let dialog = UIAlertController(title: "알림",
-                                           message: "appID 값이 없습니다.",
-                                           preferredStyle: .alert)
-            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) -> Void in
-                self.navigationController?.popViewController(animated: true)
-            }
-            
-            dialog.addAction(action)
-            
-            self.present(dialog, animated: true, completion: nil)
+            showAlertView("App ID값이 없습니다.")
             
             return
         }
@@ -52,18 +44,12 @@ class DetailViewController: UIViewController {
                 
                 self.indicatorView.stopAnimating()
                 self.bgView.isHidden = true
+                
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
                 if error != nil {
-                    let dialog = UIAlertController(title: "알림",
-                                                   message: "정보를 가져오는 데 실패하였습니다.",
-                                                   preferredStyle: .alert)
-                    let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) -> Void in
-                        self.navigationController?.popViewController(animated: true)
-                    }
                     
-                    dialog.addAction(action)
-                    
-                    self.present(dialog, animated: true, completion: nil)
+                    self.showAlertView("정보를 가져오는 데 실패했습니다.")
                     
                     return
                 }
@@ -76,43 +62,8 @@ class DetailViewController: UIViewController {
                     }
                 
                     let appDesc = JSONParser.parserAppDesc(jsonResult)
-                
-                    if let title = appDesc.title {
-                        self.titleLabel.text = title
-                    }
+                    self.initView(appDesc)
                     
-                    if let atristName = appDesc.atristName {
-                        self.artistNameLabel.text = atristName
-                    }
-                    
-                    if let description = appDesc.description {
-                        self.textView.text = description
-                    }
-                    
-                    self.textView.isEditable = false
-                    self.imageView.image = UIImage(named: "default_image.png")
-                    
-                    guard let urlSting = appDesc.url else {
-                        return
-                    }
-                    
-                    print("urlSting = \(urlSting)")
-                
-                    DispatchQueue.global().async {
-                    
-                        let url = URL(string: urlSting)
-                        let data = try? Data(contentsOf: url!)
-                    
-                        DispatchQueue.main.async {
-                            self.imageView.image = UIImage(data: data!)
-                        
-                            self.imageView.clipsToBounds = true
-                            self.imageView.layer.cornerRadius = 20
-                            self.imageView.layer.borderColor = UIColor.lightGray.cgColor
-                            self.imageView.layer.borderWidth = 1
-                        }
-                    }
-                
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -120,6 +71,57 @@ class DetailViewController: UIViewController {
             
         }.resume()
 
+    }
+    
+    func showAlertView(_ message:String) {
+        
+        let dialog = UIAlertController(title: "알림",
+                                       message: message,
+                                       preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        dialog.addAction(action)
+        
+        self.present(dialog, animated: true, completion: nil)
+    }
+    
+    func initView(_ appDesc:(url:String?, title:String?, atristName:String?, description:String?)) {
+        
+        if let title = appDesc.title {
+            self.titleLabel.text = title
+        }
+        
+        if let atristName = appDesc.atristName {
+            self.artistNameLabel.text = atristName
+        }
+        
+        if let description = appDesc.description {
+            self.textView.text = description
+        }
+        
+        self.textView.isEditable = false
+        self.imageView.image = UIImage(named: "default_image.png")
+        
+        guard let urlSting = appDesc.url else {
+            return
+        }
+        
+        DispatchQueue.global().async {
+            
+            let url = URL(string: urlSting)
+            let data = try? Data(contentsOf: url!)
+            
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data!)
+                
+                self.imageView.clipsToBounds = true
+                self.imageView.layer.cornerRadius = 20
+                self.imageView.layer.borderColor = UIColor.lightGray.cgColor
+                self.imageView.layer.borderWidth = 1
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
