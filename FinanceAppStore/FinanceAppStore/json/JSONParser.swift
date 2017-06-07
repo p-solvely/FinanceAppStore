@@ -39,17 +39,13 @@ class JSONParser {
                 }
             }
             
-            // icon url 
-            guard let images = jsonEntry["im:image"] as? NSArray else {
-                continue
-            }
-            
-            guard let jsonImage = images.lastObject as? JSONObject else {
-                continue
-            }
-            
-            if let image = jsonImage["label"] as? String {
-                appInfo.iconUrl = image
+            // icon url
+            if let images = jsonEntry["im:image"] as? NSArray {
+                if let jsonImage = images.lastObject as? JSONObject {
+                    if let image = jsonImage["label"] as? String {
+                        appInfo.iconUrl = image
+                    }
+                }
             }
             
             // app id
@@ -70,15 +66,27 @@ class JSONParser {
     
     class func parserAppDesc(_ json:JSONObject) -> (url:String?, title:String?, atristName:String?, description:String?) {
         
-        let results = json["results"] as? NSArray
-        let result = results?.firstObject as? JSONObject
+        var appDesc:(url:String?, title:String?, atristName:String?, description:String?)
+        
+        guard let results = json["results"] as? NSArray else {
+            return appDesc
+        }
+        
+        let result = results.firstObject as? JSONObject
         
         let strUrl = result?["artworkUrl512"] as? String
-        let title = result?["trackName"] as? String
-        let name = result?["artistName"] as? String
-        let desc = result?["description"] as? String
+        appDesc.url = strUrl
         
-        return (strUrl, title, name, desc)
+        let title = result?["trackName"] as? String
+        appDesc.title = title
+        
+        let name = result?["artistName"] as? String
+        appDesc.atristName = name
+        
+        let desc = result?["description"] as? String
+        appDesc.description = desc
+        
+        return appDesc
     }
 
 }
