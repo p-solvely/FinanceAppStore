@@ -24,8 +24,24 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         guard let appId = selectedAppId else {
+            
+            self.indicatorView.stopAnimating()
+            
+            let dialog = UIAlertController(title: "알림",
+                                           message: "appID 값이 없습니다.",
+                                           preferredStyle: .alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) -> Void in
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+            dialog.addAction(action)
+            
+            self.present(dialog, animated: true, completion: nil)
+            
             return
         }
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         let urlString = "https://itunes.apple.com/lookup?id=\(appId)&country=kr"
         let request = URLRequest(url: URL(string: urlString)!)
@@ -38,7 +54,17 @@ class DetailViewController: UIViewController {
                 self.bgView.isHidden = true
             
                 if error != nil {
-                    print(error!.localizedDescription)
+                    let dialog = UIAlertController(title: "알림",
+                                                   message: "정보를 가져오는 데 실패하였습니다.",
+                                                   preferredStyle: .alert)
+                    let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) -> Void in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    
+                    dialog.addAction(action)
+                    
+                    self.present(dialog, animated: true, completion: nil)
+                    
                     return
                 }
             
@@ -49,18 +75,32 @@ class DetailViewController: UIViewController {
                         return
                     }
                 
-                    typealias AppDesc = (url:String, title:String, atristName:String, description:String)
                     let appDesc = JSONParser.parserAppDesc(jsonResult)
                 
-                    self.titleLabel.text = appDesc.title
-                    self.artistNameLabel.text = appDesc.atristName
-                
-                    self.textView.text = appDesc.description
+                    if let title = appDesc.title {
+                        self.titleLabel.text = title
+                    }
+                    
+                    if let atristName = appDesc.atristName {
+                        self.artistNameLabel.text = atristName
+                    }
+                    
+                    if let description = appDesc.description {
+                        self.textView.text = description
+                    }
+                    
                     self.textView.isEditable = false
+                    self.imageView.image = UIImage(named: "default_image.png")
+                    
+                    guard let urlSting = appDesc.url else {
+                        return
+                    }
+                    
+                    print("urlSting = \(urlSting)")
                 
                     DispatchQueue.global().async {
                     
-                        let url = URL(string: appDesc.url!)
+                        let url = URL(string: urlSting)
                         let data = try? Data(contentsOf: url!)
                     
                         DispatchQueue.main.async {
