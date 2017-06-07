@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5E15FD1EE800CB005857AD /* default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FF5E15FC1EE800CB005857AD /* default_image.png */; };
 		FF6B6E041EE654CC00F247A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */; };
 		FF6B6E091EE654CC00F247A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E071EE654CC00F247A5 /* Main.storyboard */; };
 		FF6B6E0B1EE654CC00F247A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6B6E0A1EE654CC00F247A5 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF5E15FC1EE800CB005857AD /* default_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_image.png; sourceTree = "<group>"; };
 		FF6B6E001EE654CC00F247A5 /* FinanceAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6B6E081EE654CC00F247A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF5E15FB1EE800CB005857AD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E15FC1EE800CB005857AD /* default_image.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		FF6B6DF71EE654CC00F247A5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		FF6B6E021EE654CC00F247A5 /* FinanceAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				FF5E15FB1EE800CB005857AD /* images */,
 				FF6B6E2D1EE6F31000F247A5 /* data */,
 				FF6B6E2A1EE6F22700F247A5 /* json */,
 				FF6B6E031EE654CC00F247A5 /* AppDelegate.swift */,
@@ -154,6 +165,7 @@
 				FF6B6E0E1EE654CC00F247A5 /* LaunchScreen.storyboard in Resources */,
 				FF6B6E0B1EE654CC00F247A5 /* Assets.xcassets in Resources */,
 				FF6B6E091EE654CC00F247A5 /* Main.storyboard in Resources */,
+				FF5E15FD1EE800CB005857AD /* default_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
