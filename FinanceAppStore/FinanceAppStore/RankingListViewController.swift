@@ -12,6 +12,7 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var failView: UIView!
     
     var appRankingList:NSArray? = nil
     
@@ -20,6 +21,7 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.tableView.isHidden = true
+        self.failView.isHidden = true
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
@@ -35,6 +37,7 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
                 self.indicatorView.stopAnimating()
                 
                 if error != nil {
+                    self.failView.isHidden = false
                     return
                 }
                 
@@ -46,6 +49,18 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
                     }
                     
                     self.appRankingList = JSONParser.parserAppRankingList(jsonResult)
+                    if( self.appRankingList?.count == 0 ) {
+                        
+                        let dialog = UIAlertController(title: "알림",
+                                                       message: "정보를 가져오는 데 실패하였습니다.",
+                                                       preferredStyle: .alert)
+                        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                        dialog.addAction(action)
+                        
+                        self.present(dialog, animated: true, completion: nil)
+                        
+                        return
+                    }
                     
                     self.tableView.isHidden = false
                     self.tableView.reloadData()
@@ -54,7 +69,6 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
                     print(error.localizedDescription)
                     
                 }
-                
             }
             
         }.resume()
@@ -80,6 +94,7 @@ class RankingListViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         cell.titleLabel.text = appInfo.title
+        cell.icon.image = UIImage(named: "default_image.png")
         
         guard let iconUrl = appInfo.iconUrl else {
             return cell
